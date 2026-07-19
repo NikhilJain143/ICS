@@ -1,14 +1,14 @@
 'use client';
 
 import React, { useState, useRef, useCallback } from 'react';
-import { MoveHorizontal } from 'lucide-react';
+import { MoveHorizontal, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const transformData = [
   {
     id: 'engine',
-    label: 'Engine Bay',
-    before: '/images/beforeclean.png',
-    after: '/images/afterclean.png',
+    label: 'BMW Engine Bay',
+    before: '/images/bmw_before.jpg',
+    after: '/images/bmw_after.jpg',
   },
   {
     id: 'mg',
@@ -216,6 +216,20 @@ function SingleSlider({ data }) {
 }
 
 export default function BeforeAfterSlider() {
+  const scrollRef = React.useRef(null);
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -scrollRef.current.offsetWidth, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: scrollRef.current.offsetWidth, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section
       id="results"
@@ -250,29 +264,78 @@ export default function BeforeAfterSlider() {
         </div>
 
         {/* Scroll Instructions */}
-        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '40px' }} className="mobile-swipe-text">
            <p style={{ margin: 0, fontSize: '14px', color: '#64748B', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
              <MoveHorizontal size={16} /> Swipe to see more examples
            </p>
         </div>
 
-        {/* Horizontal Scrolling Slider Container */}
-        <div 
-          style={{ 
-            display: 'flex', 
-            gap: '24px', 
-            overflowX: 'auto', 
-            scrollSnapType: 'x mandatory',
-            paddingBottom: '24px',
-            WebkitOverflowScrolling: 'touch',
-            maxWidth: '1000px',
-            margin: '0 auto'
-          }}
-          className="hide-scrollbar"
-        >
-          {transformData.map((data) => (
-            <SingleSlider key={data.id} data={data} />
-          ))}
+        {/* Horizontal Scrolling Slider Container with Arrows */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '20px', maxWidth: '1050px', margin: '0 auto' }}>
+          
+          <button 
+            className="desktop-arrow"
+            onClick={scrollLeft}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '48px',
+              height: '48px',
+              borderRadius: '50%',
+              backgroundColor: '#FFFFFF',
+              border: '1px solid #E2E8F0',
+              cursor: 'pointer',
+              boxShadow: '0 4px 12px rgba(15,32,68,0.06)',
+              flexShrink: 0,
+              transition: 'all 0.2s',
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#F8FAFC'; e.currentTarget.style.borderColor = '#CBD5E1'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#FFFFFF'; e.currentTarget.style.borderColor = '#E2E8F0'; }}
+          >
+            <ChevronLeft color="#0F2044" size={24} />
+          </button>
+
+          <div 
+            ref={scrollRef}
+            style={{ 
+              display: 'flex', 
+              flex: 1,
+              gap: '24px', 
+              overflowX: 'auto', 
+              scrollSnapType: 'x mandatory',
+              paddingBottom: '24px',
+              WebkitOverflowScrolling: 'touch',
+            }}
+            className="hide-scrollbar"
+          >
+            {transformData.map((data) => (
+              <SingleSlider key={data.id} data={data} />
+            ))}
+          </div>
+
+          <button 
+            className="desktop-arrow"
+            onClick={scrollRight}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '48px',
+              height: '48px',
+              borderRadius: '50%',
+              backgroundColor: '#FFFFFF',
+              border: '1px solid #E2E8F0',
+              cursor: 'pointer',
+              boxShadow: '0 4px 12px rgba(15,32,68,0.06)',
+              flexShrink: 0,
+              transition: 'all 0.2s',
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#F8FAFC'; e.currentTarget.style.borderColor = '#CBD5E1'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#FFFFFF'; e.currentTarget.style.borderColor = '#E2E8F0'; }}
+          >
+            <ChevronRight color="#0F2044" size={24} />
+          </button>
         </div>
       </div>
       
@@ -283,6 +346,12 @@ export default function BeforeAfterSlider() {
         .hide-scrollbar {
           -ms-overflow-style: none;
           scrollbar-width: none;
+        }
+        @media (max-width: 767px) {
+          .desktop-arrow { display: none !important; }
+        }
+        @media (min-width: 768px) {
+          .mobile-swipe-text { display: none !important; }
         }
       `}</style>
     </section>

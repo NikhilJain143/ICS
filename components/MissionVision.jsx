@@ -89,7 +89,7 @@ export default function MissionVision() {
       <style>{`
         @media (min-width: 768px) {
           .mission-block {
-            border-right: 1px solid #E2E8F0;
+            border-right: 1px solid #2596be;
             padding-right: 40px;
           }
         }
