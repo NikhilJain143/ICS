@@ -22,7 +22,7 @@ export default function Hero() {
       style={{
         position: 'relative',
         width: '100%',
-        minHeight: '100vh',
+        minHeight: isMobile ? '115vh' : '100vh',
         display: 'flex',
         alignItems: 'center',
         overflow: 'hidden',
@@ -31,7 +31,7 @@ export default function Hero() {
     >
       {/* Background Video */}
       <video 
-        src="/audi-video.mp4?v=3" 
+        src="/audi-video.mp4?v=5" 
         autoPlay 
         muted 
         loop 

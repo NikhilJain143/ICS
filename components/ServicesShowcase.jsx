@@ -44,7 +44,7 @@ export default function ServicesShowcase({ onOpenDemoModal }) {
     },
     grid: {
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
       gap: '24px',
     },
     card: (isHovered) => ({

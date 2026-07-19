@@ -7,6 +7,7 @@ import MissionVision from '../components/MissionVision';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import ServicesShowcase from '../components/ServicesShowcase';
 import TrustHeritage from '../components/TrustHeritage';
+import Offices from '../components/Offices';
 import Footer from '../components/Footer';
 
 export default function HomePage() {
@@ -32,6 +33,9 @@ export default function HomePage() {
 
       {/* About & Founder Heritage */}
       <TrustHeritage />
+
+      {/* Office Locations */}
+      <Offices />
 
       {/* Footer */}
       <Footer />

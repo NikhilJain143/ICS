@@ -7,7 +7,7 @@ export default function MissionVision() {
   const styles = {
     section: {
       position: 'relative',
-      padding: '120px 0',
+      padding: '100px 0 40px 0',
       backgroundColor: '#FFFFFF',
       overflow: 'hidden',
     },
@@ -51,10 +51,10 @@ export default function MissionVision() {
       <div className="container" style={{ margin: '0 auto', maxWidth: '1150px', padding: '0 24px', position: 'relative', zIndex: 1 }}>
 
         {/* 2-Column Side-by-Side Layout */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '40px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '40px' }}>
           
           {/* Mission Block (Left side, left-aligned) */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textAlign: 'left' }}>
+          <div className="mission-block" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textAlign: 'left' }}>
             <div style={styles.titleWrapper}>
               <div style={{ padding: '14px', backgroundColor: '#F0F4FF', borderRadius: '12px', color: '#0066CC' }}>
                 <Target size={28} />
@@ -85,6 +85,15 @@ export default function MissionVision() {
 
         </div>
       </div>
+
+      <style>{`
+        @media (min-width: 768px) {
+          .mission-block {
+            border-right: 1px solid #E2E8F0;
+            padding-right: 40px;
+          }
+        }
+      `}</style>
     </section>
   );
 }

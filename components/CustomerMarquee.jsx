@@ -20,10 +20,10 @@ const brands = [
 ];
 
 export default function CustomerMarquee() {
-  const marqueeItems = [...brands, ...brands, ...brands];
+  const marqueeItems = [...brands, ...brands];
 
   return (
-    <section id="customers" style={{ padding: '80px 0', backgroundColor: '#FFFFFF' }}>
+    <section id="customers" style={{ padding: '40px 0 80px 0', backgroundColor: '#FFFFFF' }}>
       <div className="container" style={{ margin: '0 auto', width: '100%' }}>
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <p
