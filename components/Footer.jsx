@@ -63,17 +63,6 @@ export default function Footer() {
                 <Mail size={14} color="rgba(255, 255, 255, 0.6)" />
                 <span>sales@icecleaningsolutions.org</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'rgba(255, 255, 255, 0.6)', fontSize: '13px' }}>
-                <MapPin size={14} color="rgba(255, 255, 255, 0.6)" />
-                <span>Manikonda Jagir, Hyderabad</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '12px', padding: '8px', backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: '8px' }}>
-                <img src="/images/founder.png" alt="Founder" style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover' }} />
-                <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <span style={{ fontSize: '13px', color: '#FFFFFF', fontWeight: 600 }}>Leadership Team</span>
-                  <span style={{ fontSize: '11px', color: 'rgba(255, 255, 255, 0.5)' }}>Direct Contact Available</span>
-                </div>
-              </div>
             </div>
           </div>
 
