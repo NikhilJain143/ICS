@@ -17,9 +17,9 @@ export default function Offices() {
       id: 'hyderabad',
       city: 'Hyderabad',
       name: 'Hyderabad HQ',
-      address: 'SY.130P & 115/1P, Manikonda Jagir, Nanakramguda Road, Hyderabad – 500032, Telangana',
-      mapQuery: 'Manikonda+Jagir,+Nanakramguda+Road,+Hyderabad+500032',
-      link: 'https://www.google.com/maps/dir/?api=1&destination=Manikonda+Jagir,+Nanakramguda+Road,+Hyderabad+500032'
+      address: 'WeWork Rajapushpa Summit, Nanakramguda Rd, Financial District, Manikonda, Hyderabad, Telangana 500032',
+      mapQuery: 'WeWork+Rajapushpa+Summit,+Nanakramguda+Rd,+Financial+District,+Manikonda,+Hyderabad,+Telangana+500032',
+      link: 'https://www.google.com/maps/dir/?api=1&destination=WeWork+Rajapushpa+Summit,+Nanakramguda+Rd,+Financial+District,+Manikonda,+Hyderabad,+Telangana+500032'
     }
   ];
 
