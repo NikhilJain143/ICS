@@ -212,18 +212,18 @@ export default function Navbar() {
 
 
       <style>{`
-        @media (min-width: 768px) {
+        @media (min-width: 1025px) {
           .desktop-nav { display: flex !important; }
           .desktop-actions { display: flex !important; }
           .mobile-toggle-wrapper { display: none !important; }
           .mobile-toggle { display: none !important; }
         }
-        @media (max-width: 767px) {
+        @media (max-width: 1024px) {
           .main-header {
             left: 16px !important;
             right: 16px !important;
           }
-          .nav-logo-img { height: 56px !important; }
+          .nav-logo-img { height: 72px !important; }
           .mobile-whatsapp-text { display: none !important; }
           .mobile-whatsapp-btn { padding: 12px 12px !important; border-radius: 50% !important; }
           .mobile-whatsapp-btn svg { width: 22px !important; height: 22px !important; }
