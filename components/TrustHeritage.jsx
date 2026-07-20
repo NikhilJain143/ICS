@@ -90,10 +90,10 @@ export default function TrustHeritage() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <p style={{ fontSize: '16px', color: '#E2E8F0', lineHeight: 1.7, margin: 0 }}>
-              Over the years, our leadership team has built strong relationships across India's automotive sector, working alongside some of the country's most respected automotive brands, dealership networks, and industries.
+              For over a decade, our leadership team has cultivated enduring relationships across India's automotive and industrial sectors, partnering with leading dealership groups, premium automotive brands, and industrial enterprises.
             </p>
             <p style={{ fontSize: '16px', color: '#E2E8F0', lineHeight: 1.7, margin: 0 }}>
-              This experience has provided us with a deep understanding of industry standards, customer expectations, and the importance of delivering consistent, high-quality results. As ICE Cleaning Solutions expands across India, we remain committed to bringing the same professionalism, reliability, and service excellence to every customer and every project.
+              This experience has given us a deep understanding of operational excellence, customer expectations, and the uncompromising quality standards demanded by world-class organizations. As <i>Ice Cleaning Solutions</i> continues to expand across India, we remain committed to delivering innovative Dry Ice Blasting solutions with the professionalism, reliability, and precision our customers trust.
             </p>
           </div>
         </div>

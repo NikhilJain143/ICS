@@ -9,9 +9,9 @@ export default function Offices() {
       id: 'delhi',
       city: 'New Delhi',
       name: 'Delhi Facility',
-      address: 'Atul Cryogenic Gases, F-128, above Sai Medical Agency, Mayapuri Industrial Area Phase II, Industrial Area, New Delhi, Delhi 110064',
-      mapQuery: 'Atul+Cryogenic+Gases,+Mayapuri+Industrial+Area+Phase+II,+New+Delhi,+Delhi+110064',
-      link: 'https://www.google.com/maps/dir/?api=1&destination=Atul+Cryogenic+Gases,+Mayapuri+Industrial+Area+Phase+II,+New+Delhi,+Delhi+110064'
+      address: 'F-128, above Sai Medical Agency, Mayapuri Industrial Area Phase II, Industrial Area, New Delhi, Delhi 110064',
+      mapQuery: 'F-128,+Mayapuri+Industrial+Area+Phase+II,+New+Delhi,+Delhi+110064',
+      link: 'https://www.google.com/maps/dir/?api=1&destination=F-128,+Mayapuri+Industrial+Area+Phase+II,+New+Delhi,+Delhi+110064'
     },
     {
       id: 'hyderabad',

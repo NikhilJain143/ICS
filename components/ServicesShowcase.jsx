@@ -140,9 +140,9 @@ export default function ServicesShowcase({ onOpenDemoModal }) {
     {
       id: 'automotive',
       title: 'Automotive Cleaning Solutions',
-      description: 'Professional dry ice blasting services designed for dealerships, workshops, detailing studios, restoration projects, and luxury automotive brands. Heavy grease, oil residue, carbon deposits, and road grime safely removed using non-abrasive dry ice blasting technology, restoring a cleaner and more professional appearance without water or harsh chemicals alongside improving engine and break pad performance and enhancing the cooling.',
+      description: 'Advanced Dry Ice Blasting solutions for premium dealerships, workshops, detailing studios, restoration specialists, OEMs, and luxury automotive brands. Our non-abrasive, water-free, and chemical-free technology safely removes grease, oil, carbon deposits, brake dust, and road grime while preserving delicate components and factory finishes. The result is a cleaner engine bay, enhanced inspection visibility, improved cooling efficiency, and a showroom-quality finish.',
       image: '/images/automotive.webp',
-      features: ['Engine Bay Cleaning', 'Alloy Wheel Restoration & Cleaning', 'Hood & Under-Hood Cleaning'],
+      features: ['Engine Bay Cleaning & Restoration', 'Alloy Wheel & Brake Assembly Cleaning (Removes brake dust, grease, and road contaminants.)', 'Engine Compartment & Under-Hood Detailing', 'Battery Compartment Cleaning (EV & ICE Vehicles)'],
     },
     {
       id: 'industrial',
@@ -154,9 +154,9 @@ export default function ServicesShowcase({ onOpenDemoModal }) {
     {
       id: 'supply',
       title: 'Dry Ice Manufacturing & Supply',
-      description: 'Production and supply of premium-quality dry ice products for industrial, commercial, logistics, healthcare, and cleaning applications.',
+      description: 'Manufacturing and supplying premium-quality dry ice products for industrial, commercial, healthcare, cold-chain logistics, food processing, pharmaceutical, and precision cleaning applications. Produced to the highest quality standards, our dry ice ensures consistent performance, reliable cooling, and superior blasting efficiency.',
       image: '/images/dryice.png',
-      features: ['Dry Ice Blocks', '3 mm Dry Ice Pellets', '9 mm Dry Ice Pellets', '16 mm Dry Ice Pellets'],
+      features: ['Dry Ice Blocks', '3 mm Dry Ice Pellets', '9 mm Dry Ice Pellets', '16 mm Dry Ice Pellets', 'Custom Sizes Available on Request'],
     },
   ];
 
