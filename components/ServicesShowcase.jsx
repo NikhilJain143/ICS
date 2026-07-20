@@ -147,9 +147,9 @@ export default function ServicesShowcase({ onOpenDemoModal }) {
     {
       id: 'industrial',
       title: 'Industrial Cleaning Solutions',
-      description: 'Zero-moisture, non-abrasive dry ice blasting for machinery, printing presses, electrical components, and industrial equipment. Reduces downtime and completely eliminates secondary waste.',
+      description: 'Advanced Dry Ice Blasting solutions for manufacturing facilities, process industries, and industrial plants. Our non-abrasive, water-free, and chemical-free technology removes grease, oil, carbon deposits, adhesives, paint residues, production contaminants, and other stubborn build-up without damaging equipment or generating secondary waste. Clean equipment in place, reduce maintenance downtime, and improve operational efficiency through precision cleaning.',
       image: '/images/industrial.webp',
-      features: ['Machinery Cleaning', 'Manufacturing Equipment Cleaning', 'Production Line Maintenance', 'Electrical Equipment Cleaning', 'Plant Maintenance Services', 'Surface Preparation & Contaminant Removal'],
+      features: ['Industrial Machinery & Equipment Cleaning', 'Production Line & Conveyor System Cleaning', 'Electrical Panels & Control Cabinet Cleaning', 'Plant Shutdown & Preventive Maintenance Cleaning', 'Mould, Die & Tool Cleaning', 'Surface Preparation, Coating & Contaminant Removal'],
     },
     {
       id: 'supply',
