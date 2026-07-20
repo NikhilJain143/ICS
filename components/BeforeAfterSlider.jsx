@@ -7,20 +7,26 @@ const transformData = [
   {
     id: 'engine',
     label: 'BMW Engine Bay',
-    before: '/images/bmw_before.jpg',
-    after: '/images/bmw_after.jpg',
+    before: '/images/bmw_before.webp',
+    after: '/images/bmw_after.webp',
+    beforeStyle: { transform: 'scale(0.98)' },
+    afterStyle: {},
   },
   {
     id: 'mg',
     label: 'MG Undercarriage',
-    before: '/images/mg_before.jpg',
-    after: '/images/mg_after.jpg',
+    before: '/images/mg_before.webp',
+    after: '/images/mg_after.webp',
+    beforeStyle: { transform: 'scale(1.03) translateY(10px)', transformOrigin: 'center' },
+    afterStyle: {},
   },
   {
     id: 'porsche',
     label: 'Porsche Details',
-    before: '/images/por_before.jpg',
-    after: '/images/por_after.jpg',
+    before: '/images/por_before.webp',
+    after: '/images/por_after.webp',
+    beforeStyle: {},
+    afterStyle: {},
   }
 ];
 
@@ -82,9 +88,9 @@ function SingleSlider({ data }) {
         {/* AFTER Image (Base Layer) */}
         <div style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
           <img
-            src={`${data.after}?v=4`}
+            src={`${data.after}?v=11`}
             alt={`${data.label} After`}
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', ...(data.afterStyle || {}) }}
             draggable={false}
           />
           <div
@@ -117,9 +123,9 @@ function SingleSlider({ data }) {
           }}
         >
           <img
-            src={`${data.before}?v=4`}
+            src={`${data.before}?v=11`}
             alt={`${data.label} Before`}
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', ...(data.beforeStyle || {}) }}
             draggable={false}
           />
           <div

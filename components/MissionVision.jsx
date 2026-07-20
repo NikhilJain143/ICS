@@ -63,11 +63,8 @@ export default function MissionVision() {
                 Our Mission
               </h3>
             </div>
-            <p style={styles.text}>
-              To lead the adoption of Dry Ice Blasting <br className="desktop-only" />
-              technology by delivering innovative,<br className="desktop-only" />
-              environmentally responsible, and<br className="desktop-only" />
-              world-class cleaning solutions.
+            <p style={{ ...styles.text, maxWidth: '320px' }}>
+              To lead the adoption of Dry Ice Blasting technology by delivering innovative, environmentally responsible, and world-class cleaning solutions.
             </p>
           </div>
 
@@ -81,7 +78,7 @@ export default function MissionVision() {
                 Our Vision
               </h3>
             </div>
-            <p style={styles.text}>
+            <p style={{ ...styles.text, maxWidth: '400px' }}>
               To become India's most trusted and recognized leader in Dry Ice Blasting, Dry Ice manufacturing, and supply, setting the benchmark for innovation, quality, and sustainability.
             </p>
           </div>
