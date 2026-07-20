@@ -37,7 +37,7 @@ export default function Footer() {
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '12px', fontWeight: 700, color: '#60A5FA', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Quick Links</span>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '12px' }}>
-              {['Services', 'Results', 'About', 'Contact'].map((link) => (
+              {['Services', 'Results', 'About', 'Why Us', 'Visit Us'].map((link) => (
                 <a 
                   key={link}
                   href="#"
@@ -74,10 +74,6 @@ export default function Footer() {
           {/* Bottom Bar */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px', fontSize: '12px', color: 'rgba(255, 255, 255, 0.35)' }}>
             <span>© 2026 Ice Cleaning Solutions (Atul Group). All Rights Reserved.</span>
-            <div style={{ display: 'flex', gap: '16px' }}>
-              <a href="#" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.target.style.color = '#fff'} onMouseLeave={(e) => e.target.style.color = 'inherit'}>Privacy Policy</a>
-              <a href="#" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.target.style.color = '#fff'} onMouseLeave={(e) => e.target.style.color = 'inherit'}>Terms</a>
-            </div>
           </div>
 
         </div>
