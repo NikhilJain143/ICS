@@ -142,7 +142,7 @@ export default function ServicesShowcase({ onOpenDemoModal }) {
       title: 'Automotive Cleaning Solutions',
       description: 'Advanced Dry Ice Blasting solutions for premium dealerships, workshops, detailing studios, restoration specialists, OEMs, and luxury automotive brands. Our non-abrasive, water-free, and chemical-free technology safely removes grease, oil, carbon deposits, brake dust, and road grime while preserving delicate components and factory finishes. The result is a cleaner engine bay, enhanced inspection visibility, improved cooling efficiency, and a showroom-quality finish.',
       image: '/images/automotive.webp',
-      features: ['Engine Bay Cleaning & Restoration', 'Alloy Wheel & Brake Assembly Cleaning (Removes brake dust, grease, and road contaminants.)', 'Engine Compartment & Under-Hood Detailing', 'Battery Compartment Cleaning (EV & ICE Vehicles)'],
+      features: ['Engine Bay Cleaning & Restoration', 'Alloy Wheel & Brake Assembly Cleaning (Removes brake dust, grease, and road contaminants.)', 'Engine Compartment & Under-Hood Detailing', 'Battery Compartment Cleaning (EV Vehicles)'],
     },
     {
       id: 'industrial',
