@@ -101,7 +101,7 @@ export default function Navbar() {
                 background: '#25D366',
                 color: '#000000',
                 border: 'none',
-                borderRadius: '12px',
+                borderRadius: '999px',
                 boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)',
                 transition: 'all 0.2s ease'
               }}
