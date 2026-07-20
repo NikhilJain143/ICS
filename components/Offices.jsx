@@ -29,7 +29,7 @@ export default function Offices() {
         
         {/* Section Header */}
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-           <span
+            <span
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -40,6 +40,7 @@ export default function Offices() {
                 backgroundColor: '#F0F4FF',
                 padding: '8px 20px',
                 borderRadius: '999px',
+                border: '1px solid #DBEAFE',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
                 marginBottom: '16px'

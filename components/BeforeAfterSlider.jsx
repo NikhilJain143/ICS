@@ -251,12 +251,12 @@ export default function BeforeAfterSlider() {
               fontSize: '12px',
               fontWeight: 800,
               color: '#0066CC',
-              backgroundColor: '#FFFFFF',
+              backgroundColor: '#F0F4FF',
               padding: '8px 20px',
               borderRadius: '999px',
+              border: '1px solid #DBEAFE',
               letterSpacing: '0.1em',
               textTransform: 'uppercase',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.05)'
             }}
           >
             WHAT YOU CAN EXPECT
