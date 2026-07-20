@@ -1,5 +1,6 @@
 import './globals.css';
 import { Inter, Outfit } from 'next/font/google';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
@@ -138,6 +139,15 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${inter.variable} ${outfit.variable}`}>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-46LZRVLP21" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-46LZRVLP21');
+          `}
+        </Script>
         {children}
       </body>
     </html>
