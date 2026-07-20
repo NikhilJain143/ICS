@@ -25,7 +25,8 @@ export default function TrustHeritage() {
       {/* About Us Video Block */}
       <div style={{ position: 'relative', width: '100%', minHeight: '500px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '100px 24px', overflow: 'hidden' }}>
         <video 
-          src="/audi-video.mp4?v=5" 
+          src="/audi-video.mp4?v=6" 
+          poster="/poster.jpg"
           autoPlay 
           muted 
           loop 
