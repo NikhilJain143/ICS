@@ -72,13 +72,13 @@ export default function Navbar() {
                 style={{
                   fontSize: '14px',
                   fontWeight: 700,
-                  color: '#000000',
+                  color: '#0F2044',
                   textDecoration: 'none',
                   transition: 'color 0.2s ease',
                   fontFamily: "'Inter', sans-serif"
                 }}
-                onMouseEnter={(e) => e.currentTarget.style.color = '#000080'}
-                onMouseLeave={(e) => e.currentTarget.style.color = '#000000'}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#0066CC'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#0F2044'}
               >
                 {link.label}
               </a>
@@ -102,16 +102,14 @@ export default function Navbar() {
                 color: '#000000',
                 border: 'none',
                 borderRadius: '12px',
-                boxShadow: '0 4px 14px 0 rgba(37, 211, 102, 0.7)',
+                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)',
                 transition: 'all 0.2s ease'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 6px 20px 0 rgba(37, 211, 102, 0.4)';
+                e.currentTarget.style.boxShadow = '0 12px 28px rgba(0, 0, 0, 0.2)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 4px 14px 0 rgba(37, 211, 102, 0.3)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.15)';
               }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none">
@@ -136,9 +134,10 @@ export default function Navbar() {
                 cursor: 'pointer',
                 fontFamily: "'Inter', sans-serif",
                 background: '#25D366',
-                color: '#FFFFFF',
+                color: '#000000',
                 border: 'none',
                 borderRadius: '999px',
+                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)',
               }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none">

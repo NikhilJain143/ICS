@@ -138,14 +138,14 @@ export default function ServicesShowcase({ onOpenDemoModal }) {
       id: 'automotive',
       title: 'Automotive Cleaning Solutions',
       description: 'Professional dry ice blasting services designed for dealerships, workshops, detailing studios, restoration projects, and luxury automotive brands. Heavy grease, oil residue, carbon deposits, and road grime safely removed using non-abrasive dry ice blasting technology, restoring a cleaner and more professional appearance without water or harsh chemicals alongside improving engine and break pad performance and enhancing the cooling.',
-      image: '/images/automotive.png',
+      image: '/images/automotive.webp',
       features: ['Engine Bay Cleaning', 'Alloy Wheel Restoration & Cleaning', 'Hood & Under-Hood Cleaning'],
     },
     {
       id: 'industrial',
       title: 'Industrial Cleaning Solutions',
-      description: 'Advanced cleaning services that help industrial facilities maintain critical equipment while reducing maintenance time and production downtime.',
-      image: '/images/industrial.png',
+      description: 'Zero-moisture, non-abrasive dry ice blasting for machinery, printing presses, electrical components, and industrial equipment. Reduces downtime and completely eliminates secondary waste.',
+      image: '/images/industrial.webp',
       features: ['Machinery Cleaning', 'Manufacturing Equipment Cleaning', 'Production Line Maintenance', 'Electrical Equipment Cleaning', 'Plant Maintenance Services', 'Surface Preparation & Contaminant Removal'],
     },
     {
