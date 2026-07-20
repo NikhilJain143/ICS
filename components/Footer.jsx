@@ -29,7 +29,7 @@ export default function Footer() {
               />
             </div>
             <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.5)', maxWidth: '320px', marginTop: '20px', lineHeight: '1.6' }}>
-              Precision dry ice blasting for luxury automotive dealerships & industrial enterprise.
+              Precision dry ice blasting for luxury automotive dealerships & industries.
             </p>
           </div>
 

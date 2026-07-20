@@ -8,7 +8,7 @@ export default function Offices() {
     {
       id: 'delhi',
       city: 'New Delhi',
-      name: 'North India Headquarters',
+      name: 'Delhi Facility',
       address: 'Atul Cryogenic Gases, F-128, above Sai Medical Agency, Mayapuri Industrial Area Phase II, Industrial Area, New Delhi, Delhi 110064',
       mapQuery: 'Atul+Cryogenic+Gases,+Mayapuri+Industrial+Area+Phase+II,+New+Delhi,+Delhi+110064',
       link: 'https://www.google.com/maps/dir/?api=1&destination=Atul+Cryogenic+Gases,+Mayapuri+Industrial+Area+Phase+II,+New+Delhi,+Delhi+110064'
@@ -16,7 +16,7 @@ export default function Offices() {
     {
       id: 'hyderabad',
       city: 'Hyderabad',
-      name: 'South India Hub',
+      name: 'Hyderabad HQ',
       address: 'SY.130P & 115/1P, Manikonda Jagir, Nanakramguda Road, Hyderabad – 500032, Telangana',
       mapQuery: 'Manikonda+Jagir,+Nanakramguda+Road,+Hyderabad+500032',
       link: 'https://www.google.com/maps/dir/?api=1&destination=Manikonda+Jagir,+Nanakramguda+Road,+Hyderabad+500032'
@@ -24,7 +24,7 @@ export default function Offices() {
   ];
 
   return (
-    <section style={{ backgroundColor: '#F8FAFC', padding: '100px 0', borderTop: '1px solid #E2E8F0' }}>
+    <section id="visit-us" style={{ backgroundColor: '#F8FAFC', padding: '100px 0', borderTop: '1px solid #E2E8F0' }}>
       <div className="container" style={{ margin: '0 auto', maxWidth: '1200px', padding: '0 24px' }}>
         
         {/* Section Header */}

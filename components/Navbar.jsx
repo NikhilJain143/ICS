@@ -19,7 +19,8 @@ export default function Navbar() {
     { label: 'Services', href: '#services' },
     { label: 'Results', href: '#results' },
     { label: 'About', href: '#about' },
-    { label: 'Why Us', href: '#why-us' }
+    { label: 'Why Us', href: '#why-us' },
+    { label: 'Visit Us', href: '#visit-us' }
   ];
 
   const handleWhatsApp = () => {
