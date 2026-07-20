@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useCallback } from 'react';
+import Image from 'next/image';
 import { MoveHorizontal, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const transformData = [
@@ -87,10 +88,12 @@ function SingleSlider({ data }) {
       >
         {/* AFTER Image (Base Layer) */}
         <div style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
-          <img
+          <Image
             src={`${data.after}?v=11`}
             alt={`${data.label} After`}
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', ...(data.afterStyle || {}) }}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            style={{ objectFit: 'cover', display: 'block', ...(data.afterStyle || {}) }}
             draggable={false}
           />
           <div
@@ -122,10 +125,12 @@ function SingleSlider({ data }) {
             zIndex: 1,
           }}
         >
-          <img
+          <Image
             src={`${data.before}?v=11`}
             alt={`${data.label} Before`}
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', ...(data.beforeStyle || {}) }}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            style={{ objectFit: 'cover', display: 'block', ...(data.beforeStyle || {}) }}
             draggable={false}
           />
           <div
@@ -282,6 +287,7 @@ export default function BeforeAfterSlider() {
           <button 
             className="desktop-arrow"
             onClick={scrollLeft}
+            aria-label="Scroll left"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -323,6 +329,7 @@ export default function BeforeAfterSlider() {
           <button 
             className="desktop-arrow"
             onClick={scrollRight}
+            aria-label="Scroll right"
             style={{
               display: 'flex',
               alignItems: 'center',

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 const brands = [
   { name: 'Porsche', src: '/images/porsche.png' },
@@ -81,10 +82,12 @@ export default function CustomerMarquee() {
             }}
           >
             {marqueeItems.map((brand, index) => (
-              <img
+              <Image
                 key={`${brand.name}-${index}`}
                 src={brand.src}
                 alt={`${brand.name} logo`}
+                width={120}
+                height={40}
                 style={{
                   height: '40px',
                   maxWidth: '120px',
