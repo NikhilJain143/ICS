@@ -64,7 +64,7 @@ export default function MissionVision() {
               </h3>
             </div>
             <p style={styles.text}>
-              To lead the adoption of Dry Ice Blasting<br className="desktop-only" />
+              To lead the adoption of Dry Ice Blasting <br className="desktop-only" />
               technology by delivering innovative,<br className="desktop-only" />
               environmentally responsible, and<br className="desktop-only" />
               world-class cleaning solutions.
