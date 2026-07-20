@@ -5,13 +5,12 @@ import { Snowflake } from 'lucide-react';
 
 export default function TrustHeritage() {
   const whyUsPoints = [
-    "15 kg of premium-grade dry ice used per cleaning for optimal performance.",
-    "Among the pioneering companies to introduce Dry Ice Blasting Technology in India.",
-    "Transparent and standardized pricing across all vehicle brands.",
-    "Over 10 years of industry expertise in advanced cleaning solutions.",
-    "Successfully serviced 200,000+ vehicles across all major automotive brands.",
-    "In-house dry ice production facilities in Delhi and Hyderabad, ensuring consistent quality and availability.",
-    "Exceptional quality standards delivered by highly trained and certified technicians."
+    "Non-abrasive, water-free and chemical-free cleaning that protects sensitive components while achieving factory-like finishes.",
+    "In-house dry ice manufacturing in Delhi NCR and Hyderabad, ensuring consistent quality and uninterrupted supply.",
+    "India's pioneers in professional Dry Ice Blasting technology.",
+    "15 kg of premium-grade dry ice used per vehicle for superior cleaning performance.",
+    "Transparent and standardized pricing across all vehicle brands and segments.",
+    "Factory-trained technicians delivering safe, consistent, and exceptional results."
   ];
 
   return (
@@ -101,7 +100,34 @@ export default function TrustHeritage() {
       </div>
 
       <div id="why-us" className="container" style={{ margin: '0 auto', maxWidth: '1000px', padding: '100px 24px' }}>
-        {/* WHY US */}
+        
+        {/* Section Header */}
+        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+           <span
+             style={{
+               display: 'inline-flex',
+               alignItems: 'center',
+               gap: '8px',
+               fontSize: '12px',
+               fontWeight: 800,
+               color: '#0066CC',
+               backgroundColor: '#F0F4FF',
+               padding: '8px 20px',
+               borderRadius: '999px',
+               border: '1px solid #DBEAFE',
+               letterSpacing: '0.1em',
+               textTransform: 'uppercase',
+               marginBottom: '16px'
+             }}
+           >
+             Why Choose Us
+           </span>
+           <h2 style={{ fontSize: '36px', fontWeight: 800, fontFamily: "'Outfit', sans-serif", margin: 0, color: '#0F2044', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
+             Setting the Premium Standard in Dry Ice Blasting
+           </h2>
+        </div>
+
+        {/* WHY US Grid Card */}
         <div style={{ 
             backgroundColor: '#FFFFFF',
             borderRadius: '24px',
@@ -110,17 +136,13 @@ export default function TrustHeritage() {
             boxShadow: '0 10px 40px -10px rgba(15, 32, 68, 0.08)',
           }}
         >
-           <div style={{ marginBottom: '32px' }}>
-             <h3 style={{ fontSize: '28px', fontWeight: 800, fontFamily: "'Outfit', sans-serif", margin: 0, color: '#0F2044' }}>
-               Why Us: The Premium Standard
-             </h3>
-           </div>
-           
-           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '32px' }}>
              {whyUsPoints.map((point, idx) => (
-               <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                 <Snowflake size={20} color="#60A5FA" style={{ flexShrink: 0, marginTop: '2px' }} />
-                 <span style={{ fontSize: '15px', color: '#475569', lineHeight: 1.6 }}>{point}</span>
+               <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                 <div style={{ padding: '8px', backgroundColor: '#F0F4FF', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                   <Snowflake size={20} color="#0066CC" />
+                 </div>
+                 <span style={{ fontSize: '15px', color: '#334155', lineHeight: 1.6, fontWeight: 500 }}>{point}</span>
                </div>
              ))}
            </div>

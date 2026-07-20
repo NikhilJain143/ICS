@@ -64,7 +64,10 @@ export default function MissionVision() {
               </h3>
             </div>
             <p style={styles.text}>
-              To accelerate the adoption of dry ice blasting technology within the automobile and aviation industries across India.
+              To lead the adoption of Dry Ice Blasting<br className="desktop-only" />
+              technology by delivering innovative,<br className="desktop-only" />
+              environmentally responsible, and<br className="desktop-only" />
+              world-class cleaning solutions.
             </p>
           </div>
 
@@ -79,7 +82,7 @@ export default function MissionVision() {
               </h3>
             </div>
             <p style={styles.text}>
-              To become India's most trusted and recognised provider of dry ice blasting services and dry ice manufacturing solutions over the next decade.
+              To become India's most trusted and recognized leader in Dry Ice Blasting, Dry Ice manufacturing, and supply, setting the benchmark for innovation, quality, and sustainability.
             </p>
           </div>
 
@@ -92,6 +95,10 @@ export default function MissionVision() {
             border-right: 1px solid #2596be;
             padding-right: 40px;
           }
+          .desktop-only { display: block; }
+        }
+        @media (max-width: 767px) {
+          .desktop-only { display: none; }
         }
       `}</style>
     </section>

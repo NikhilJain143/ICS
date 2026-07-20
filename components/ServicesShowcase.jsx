@@ -165,7 +165,7 @@ export default function ServicesShowcase({ onOpenDemoModal }) {
       <div className="container">
         <div style={styles.headerWrapper}>
           <span style={styles.badge}>WHAT WE DO</span>
-          <h2 style={styles.title}>Enterprise Dry Ice Solutions</h2>
+          <h2 style={styles.title}>Integrated Dry Ice Solutions</h2>
           <p style={styles.subtitle}>Premium automotive cleaning and dry ice manufacturing.</p>
         </div>
 
