@@ -61,15 +61,11 @@ function SingleSlider({ data }) {
 
       const rect = containerRef.current.getBoundingClientRect();
       const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
-      const percentage = (x / rect.width) * 100;
-
-      setSliderPos(percentage);
+      setSliderPos((x / rect.width) * 100);
     },
     [isDragging]
   );
 
-  const onMouseMove = (event) => handleMove(event.clientX);
-  const onTouchMove = (event) => handleMove(event.touches[0].clientX);
   const stopDragging = () => setIsDragging(false);
 
   return (
@@ -88,20 +84,19 @@ function SingleSlider({ data }) {
         onMouseDown={() => setIsDragging(true)}
         onMouseUp={stopDragging}
         onMouseLeave={stopDragging}
-        onMouseMove={onMouseMove}
+        onMouseMove={(event) => handleMove(event.clientX)}
         onTouchStart={() => setIsDragging(true)}
         onTouchEnd={stopDragging}
-        onTouchMove={onTouchMove}
+        onTouchMove={(event) => handleMove(event.touches[0].clientX)}
         style={{
           position: 'relative',
           width: '100%',
-          height: 'auto',
           aspectRatio: '4/3',
           maxHeight: '550px',
           borderRadius: '20px',
           overflow: 'hidden',
-          border: '4px solid white',
-          boxShadow: '0 20px 50px rgba(15,32,68,0.12)',
+          border: '4px solid #FFFFFF',
+          boxShadow: '0 20px 50px rgba(15, 32, 68, 0.12)',
           cursor: 'ew-resize',
           userSelect: 'none',
           backgroundColor: '#0F2044',
@@ -138,13 +133,13 @@ function SingleSlider({ data }) {
               borderRadius: '6px',
               color: '#FFFFFF',
               fontSize: '11px',
-              fontWeight: 'bold',
+              fontWeight: 700,
               textTransform: 'uppercase',
               letterSpacing: '0.05em',
               zIndex: 5,
             }}
           >
-            AFTER
+            After
           </div>
         </div>
 
@@ -174,18 +169,18 @@ function SingleSlider({ data }) {
               position: 'absolute',
               top: '16px',
               left: '16px',
-              backgroundColor: 'rgba(15,32,68,0.9)',
+              backgroundColor: 'rgba(15, 32, 68, 0.9)',
               padding: '6px 12px',
               borderRadius: '6px',
               color: '#60A5FA',
               fontSize: '11px',
-              fontWeight: 'bold',
+              fontWeight: 700,
               textTransform: 'uppercase',
               letterSpacing: '0.05em',
               zIndex: 5,
             }}
           >
-            BEFORE
+            Before
           </div>
         </div>
 
@@ -206,8 +201,8 @@ function SingleSlider({ data }) {
             bottom: 0,
             left: `${sliderPos}%`,
             width: '3px',
-            backgroundColor: 'white',
-            boxShadow: '0 0 12px rgba(37,99,235,0.6)',
+            backgroundColor: '#FFFFFF',
+            boxShadow: '0 0 12px rgba(37, 99, 235, 0.6)',
             zIndex: 10,
             transform: 'translateX(-50%)',
           }}
@@ -221,15 +216,15 @@ function SingleSlider({ data }) {
               width: '44px',
               height: '44px',
               backgroundColor: '#0066CC',
-              border: '3px solid white',
+              border: '3px solid #FFFFFF',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              boxShadow: '0 4px 12px rgba(15,32,68,0.2)',
+              boxShadow: '0 4px 12px rgba(15, 32, 68, 0.2)',
             }}
           >
-            <MoveHorizontal size={20} color="white" />
+            <MoveHorizontal size={20} color="#FFFFFF" />
           </div>
         </div>
       </div>
@@ -237,7 +232,6 @@ function SingleSlider({ data }) {
       <div style={{ textAlign: 'center' }}>
         <span
           style={{
-            display: 'inline-block',
             fontFamily: 'var(--font-outfit)',
             fontSize: '18px',
             fontWeight: 700,
@@ -256,13 +250,7 @@ function SingleSlider({ data }) {
           gap: '16px',
         }}
       >
-        <span
-          style={{
-            fontSize: '14px',
-            color: '#475569',
-            fontWeight: 600,
-          }}
-        >
+        <span style={{ fontSize: '14px', color: '#475569', fontWeight: 600 }}>
           Before
         </span>
 
@@ -280,13 +268,7 @@ function SingleSlider({ data }) {
           aria-label={`${data.label} image comparison slider`}
         />
 
-        <span
-          style={{
-            fontSize: '14px',
-            color: '#475569',
-            fontWeight: 600,
-          }}
-        >
+        <span style={{ fontSize: '14px', color: '#475569', fontWeight: 600 }}>
           After
         </span>
       </div>
@@ -295,9 +277,176 @@ function SingleSlider({ data }) {
 }
 
 export default function BeforeAfterSlider() {
-  const scrollRef = React.useRef(null);
+  const scrollRef = useRef(null);
 
   const scrollLeft = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({
-        left:
+        left: -scrollRef.current.offsetWidth,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: scrollRef.current.offsetWidth,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  return (
+    <section
+      id="results"
+      style={{
+        padding: '100px 0',
+        backgroundColor: '#F8FAFC',
+        borderTop: '1px solid #E2E8F0',
+      }}
+    >
+      <div
+        className="container"
+        style={{
+          maxWidth: '1200px',
+          margin: '0 auto',
+          padding: '0 20px',
+        }}
+      >
+        <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+          <span
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              fontSize: '12px',
+              fontWeight: 800,
+              color: '#0066CC',
+              backgroundColor: '#F0F4FF',
+              padding: '8px 20px',
+              borderRadius: '999px',
+              border: '1px solid #DBEAFE',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+            }}
+          >
+            What You Can Expect
+          </span>
+        </div>
+
+        <div
+          style={{ textAlign: 'center', marginBottom: '40px' }}
+          className="mobile-swipe-text"
+        >
+          <p
+            style={{
+              margin: 0,
+              fontSize: '14px',
+              color: '#64748B',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px',
+            }}
+          >
+            <MoveHorizontal size={16} /> Swipe to see more examples
+          </p>
+        </div>
+
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '20px',
+            maxWidth: '1050px',
+            margin: '0 auto',
+          }}
+        >
+          <button
+            className="desktop-arrow"
+            onClick={scrollLeft}
+            aria-label="Show previous example"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '48px',
+              height: '48px',
+              borderRadius: '50%',
+              backgroundColor: '#FFFFFF',
+              border: '1px solid #E2E8F0',
+              cursor: 'pointer',
+              boxShadow: '0 4px 12px rgba(15, 32, 68, 0.06)',
+              flexShrink: 0,
+            }}
+          >
+            <ChevronLeft color="#0F2044" size={24} />
+          </button>
+
+          <div
+            ref={scrollRef}
+            className="hide-scrollbar"
+            style={{
+              display: 'flex',
+              flex: 1,
+              gap: '24px',
+              overflowX: 'auto',
+              scrollSnapType: 'x mandatory',
+              paddingBottom: '24px',
+              WebkitOverflowScrolling: 'touch',
+            }}
+          >
+            {transformData.map((data) => (
+              <SingleSlider key={data.id} data={data} />
+            ))}
+          </div>
+
+          <button
+            className="desktop-arrow"
+            onClick={scrollRight}
+            aria-label="Show next example"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '48px',
+              height: '48px',
+              borderRadius: '50%',
+              backgroundColor: '#FFFFFF',
+              border: '1px solid #E2E8F0',
+              cursor: 'pointer',
+              boxShadow: '0 4px 12px rgba(15, 32, 68, 0.06)',
+              flexShrink: 0,
+            }}
+          >
+            <ChevronRight color="#0F2044" size={24} />
+          </button>
+        </div>
+      </div>
+
+      <style>{`
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+
+        @media (max-width: 767px) {
+          .desktop-arrow {
+            display: none !important;
+          }
+        }
+
+        @media (min-width: 768px) {
+          .mobile-swipe-text {
+            display: none !important;
+          }
+        }
+      `}</style>
+    </section>
+  );
+}
