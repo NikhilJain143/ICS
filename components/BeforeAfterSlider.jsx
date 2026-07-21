@@ -449,7 +449,8 @@ export default function BeforeAfterSlider() {
             style={{
               display: 'flex',
               flex: 1,
-              overflowX: 'hidden',
+              overflowX: 'auto',
+              overflowY: 'hidden',
               scrollBehavior: 'smooth',
               scrollSnapType: 'x mandatory',
                             WebkitOverflowScrolling: 'touch',
@@ -491,6 +492,9 @@ export default function BeforeAfterSlider() {
         }
 
         .hide-scrollbar {
+          overflow-x: auto;
+          overflow-y: hidden;
+          -webkit-overflow-scrolling: touch;
           -ms-overflow-style: none;
           scrollbar-width: none;
         }
@@ -498,6 +502,10 @@ export default function BeforeAfterSlider() {
         @media (max-width: 767px) {
           .desktop-arrow {
             display: none !important;
+          }
+
+          .hide-scrollbar {
+            overflow-x: auto !important;
           }
         }
 
