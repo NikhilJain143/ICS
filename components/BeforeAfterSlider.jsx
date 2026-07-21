@@ -85,7 +85,9 @@ function SingleSlider({ data }) {
     <div
       style={{
         flex: '0 0 100%',
+        width: '100%',
         minWidth: '100%',
+        maxWidth: '100%',
         scrollSnapAlign: 'center',
         display: 'flex',
         flexDirection: 'column',
@@ -104,7 +106,7 @@ function SingleSlider({ data }) {
         style={{
           position: 'relative',
           width: '100%',
-          maxWidth: imageRatio <= 1 ? '650px' : '100%',
+          maxWidth: imageRatio <= 1 ? '600px' : '900px',
           margin: '0 auto',
           aspectRatio: imageRatio,
           borderRadius: '20px',
@@ -232,26 +234,13 @@ function SingleSlider({ data }) {
         </div>
       </div>
 
-      <div style={{ textAlign: 'center' }}>
-        <span
-          style={{
-            fontFamily: 'var(--font-outfit)',
-            fontSize: '18px',
-            fontWeight: 700,
-            color: '#0F2044',
-          }}
-        >
-          {data.label}
-        </span>
-      </div>
-
       <div
         style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: '16px',
-          maxWidth: imageRatio <= 1 ? '650px' : '100%',
+          maxWidth: imageRatio <= 1 ? '600px' : '900px',
           width: '100%',
           margin: '0 auto',
         }}
@@ -460,11 +449,10 @@ export default function BeforeAfterSlider() {
             style={{
               display: 'flex',
               flex: 1,
-              gap: '24px',
-              overflowX: 'auto',
+              overflowX: 'hidden',
+              scrollBehavior: 'smooth',
               scrollSnapType: 'x mandatory',
-              paddingBottom: '24px',
-              WebkitOverflowScrolling: 'touch',
+                            WebkitOverflowScrolling: 'touch',
             }}
           >
             {filteredData.map((data) => (
