@@ -1,58 +1,62 @@
 'use client';
 
-import React, { useState, useRef, useCallback } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { MoveHorizontal, ChevronLeft, ChevronRight } from 'lucide-react';
+
+const categories = [
+  { id: 'engine', label: 'Engine Bay Cleaning' },
+  { id: 'alloy-wheels', label: 'Alloy Wheels Cleaning' },
+  { id: 'industrial', label: 'Industrial Equipment Cleaning' },
+];
 
 const transformData = [
   {
     id: 'bmw-engine',
+    category: 'engine',
     label: 'Engine Bay Cleaning',
     before: '/images/bmw_before.webp',
     after: '/images/bmw_after.webp',
-    beforeStyle: { transform: 'scale(0.98)' },
-    afterStyle: {},
+    aspectRatio: 4 / 3,
   },
   {
     id: 'mg-engine',
+    category: 'engine',
     label: 'Engine Bay Cleaning',
     before: '/images/mg_before.webp',
     after: '/images/mg_after.webp',
-    beforeStyle: {
-      transform: 'scale(1.03) translateY(10px)',
-      transformOrigin: 'center',
-    },
-    afterStyle: {},
+    aspectRatio: 4 / 3,
   },
   {
     id: 'porsche-engine',
+    category: 'engine',
     label: 'Engine Bay Cleaning',
     before: '/images/por_before.webp',
     after: '/images/por_after.webp',
-    beforeStyle: {},
-    afterStyle: {},
+    aspectRatio: 4 / 3,
   },
   {
     id: 'alloy-wheels',
+    category: 'alloy-wheels',
     label: 'Alloy Wheels Cleaning',
     before: '/images/IMG-20260721-WA0026.jpg',
     after: '/images/IMG-20260721-WA0025.jpg',
-    beforeStyle: {},
-    afterStyle: {},
+    aspectRatio: 1,
   },
   {
     id: 'industrial-equipment',
+    category: 'industrial',
     label: 'Industrial Equipment Cleaning',
     before: '/images/IMG-20260721-WA0009.jpg',
     after: '/images/IMG-20260721-WA0024.jpg',
-    beforeStyle: {},
-    afterStyle: {},
+    aspectRatio: 3 / 4,
   },
 ];
 
 function SingleSlider({ data }) {
   const [sliderPos, setSliderPos] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
+  const [imageRatio, setImageRatio] = useState(data.aspectRatio || 4 / 3);
   const containerRef = useRef(null);
 
   const handleMove = useCallback(
@@ -61,10 +65,19 @@ function SingleSlider({ data }) {
 
       const rect = containerRef.current.getBoundingClientRect();
       const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+
       setSliderPos((x / rect.width) * 100);
     },
     [isDragging]
   );
+
+  const handleAfterImageLoad = (event) => {
+    const { naturalWidth, naturalHeight } = event.currentTarget;
+
+    if (naturalWidth && naturalHeight) {
+      setImageRatio(naturalWidth / naturalHeight);
+    }
+  };
 
   const stopDragging = () => setIsDragging(false);
 
@@ -91,15 +104,14 @@ function SingleSlider({ data }) {
         style={{
           position: 'relative',
           width: '100%',
-          aspectRatio: '4/3',
-          maxHeight: '550px',
+          maxWidth: imageRatio <= 1 ? '650px' : '100%',
+          margin: '0 auto',
+          aspectRatio: imageRatio,
           borderRadius: '20px',
           overflow: 'hidden',
-          border: '4px solid #FFFFFF',
           boxShadow: '0 20px 50px rgba(15, 32, 68, 0.12)',
           cursor: 'ew-resize',
           userSelect: 'none',
-          backgroundColor: '#0F2044',
         }}
       >
         <div
@@ -114,11 +126,12 @@ function SingleSlider({ data }) {
             src={`${data.after}?v=11`}
             alt={`${data.label} After`}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 900px"
+            onLoad={handleAfterImageLoad}
             style={{
-              objectFit: 'cover',
+              objectFit: 'contain',
+              objectPosition: 'center',
               display: 'block',
-              ...(data.afterStyle || {}),
             }}
             draggable={false}
           />
@@ -155,11 +168,11 @@ function SingleSlider({ data }) {
             src={`${data.before}?v=11`}
             alt={`${data.label} Before`}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 900px"
             style={{
-              objectFit: 'cover',
+              objectFit: 'contain',
+              objectPosition: 'center',
               display: 'block',
-              ...(data.beforeStyle || {}),
             }}
             draggable={false}
           />
@@ -183,16 +196,6 @@ function SingleSlider({ data }) {
             Before
           </div>
         </div>
-
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            backgroundColor: 'rgba(15, 32, 68, 0.15)',
-            pointerEvents: 'none',
-            zIndex: 2,
-          }}
-        />
 
         <div
           style={{
@@ -248,6 +251,9 @@ function SingleSlider({ data }) {
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: '16px',
+          maxWidth: imageRatio <= 1 ? '650px' : '100%',
+          width: '100%',
+          margin: '0 auto',
         }}
       >
         <span style={{ fontSize: '14px', color: '#475569', fontWeight: 600 }}>
@@ -277,7 +283,23 @@ function SingleSlider({ data }) {
 }
 
 export default function BeforeAfterSlider() {
+  const [activeCategory, setActiveCategory] = useState('engine');
   const scrollRef = useRef(null);
+
+  const filteredData = transformData.filter(
+    (item) => item.category === activeCategory
+  );
+
+  const hasMultipleImages = filteredData.length > 1;
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({
+        left: 0,
+        behavior: 'smooth',
+      });
+    }
+  }, [activeCategory]);
 
   const scrollLeft = () => {
     if (scrollRef.current) {
@@ -319,7 +341,6 @@ export default function BeforeAfterSlider() {
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '8px',
               fontSize: '12px',
               fontWeight: 800,
               color: '#0066CC',
@@ -336,23 +357,70 @@ export default function BeforeAfterSlider() {
         </div>
 
         <div
-          style={{ textAlign: 'center', marginBottom: '40px' }}
-          className="mobile-swipe-text"
+          role="tablist"
+          aria-label="Cleaning categories"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            gap: '12px',
+            marginBottom: hasMultipleImages ? '24px' : '40px',
+          }}
         >
-          <p
-            style={{
-              margin: 0,
-              fontSize: '14px',
-              color: '#64748B',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '8px',
-            }}
-          >
-            <MoveHorizontal size={16} /> Swipe to see more examples
-          </p>
+          {categories.map((category) => {
+            const isActive = activeCategory === category.id;
+
+            return (
+              <button
+                key={category.id}
+                type="button"
+                role="tab"
+                aria-selected={isActive}
+                onClick={() => setActiveCategory(category.id)}
+                style={{
+                  border: isActive
+                    ? '1px solid #0066CC'
+                    : '1px solid #DBEAFE',
+                  backgroundColor: isActive ? '#0066CC' : '#F0F4FF',
+                  color: isActive ? '#FFFFFF' : '#0066CC',
+                  padding: '10px 18px',
+                  borderRadius: '999px',
+                  fontFamily: 'var(--font-inter)',
+                  fontSize: '13px',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  boxShadow: isActive
+                    ? '0 6px 16px rgba(0, 102, 204, 0.2)'
+                    : 'none',
+                }}
+              >
+                {category.label}
+              </button>
+            );
+          })}
         </div>
+
+        {hasMultipleImages && (
+          <div
+            style={{ textAlign: 'center', marginBottom: '24px' }}
+            className="mobile-swipe-text"
+          >
+            <p
+              style={{
+                margin: 0,
+                fontSize: '14px',
+                color: '#64748B',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+              }}
+            >
+              <MoveHorizontal size={16} /> Swipe to see more examples
+            </p>
+          </div>
+        )}
 
         <div
           style={{
@@ -366,7 +434,8 @@ export default function BeforeAfterSlider() {
           <button
             className="desktop-arrow"
             onClick={scrollLeft}
-            aria-label="Show previous example"
+            disabled={!hasMultipleImages}
+            aria-label="Show previous image"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -376,7 +445,8 @@ export default function BeforeAfterSlider() {
               borderRadius: '50%',
               backgroundColor: '#FFFFFF',
               border: '1px solid #E2E8F0',
-              cursor: 'pointer',
+              cursor: hasMultipleImages ? 'pointer' : 'not-allowed',
+              opacity: hasMultipleImages ? 1 : 0.35,
               boxShadow: '0 4px 12px rgba(15, 32, 68, 0.06)',
               flexShrink: 0,
             }}
@@ -397,7 +467,7 @@ export default function BeforeAfterSlider() {
               WebkitOverflowScrolling: 'touch',
             }}
           >
-            {transformData.map((data) => (
+            {filteredData.map((data) => (
               <SingleSlider key={data.id} data={data} />
             ))}
           </div>
@@ -405,7 +475,8 @@ export default function BeforeAfterSlider() {
           <button
             className="desktop-arrow"
             onClick={scrollRight}
-            aria-label="Show next example"
+            disabled={!hasMultipleImages}
+            aria-label="Show next image"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -415,7 +486,8 @@ export default function BeforeAfterSlider() {
               borderRadius: '50%',
               backgroundColor: '#FFFFFF',
               border: '1px solid #E2E8F0',
-              cursor: 'pointer',
+              cursor: hasMultipleImages ? 'pointer' : 'not-allowed',
+              opacity: hasMultipleImages ? 1 : 0.35,
               boxShadow: '0 4px 12px rgba(15, 32, 68, 0.06)',
               flexShrink: 0,
             }}
