@@ -6,8 +6,10 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
 
 export const metadata = {
-  title: 'Ice Cleaning Solutions | Luxury Automotive & Industrial Dry Ice Blasting India',
-  description: "India's premier 100% waterless dry ice blasting services & dry ice manufacturing for luxury automotive dealerships (Porsche, Audi, Mercedes, BMW) and industrial plant maintenance. Zero moisture, zero abrasive risk, 70% faster turnaround.",
+  title:
+    'Ice Cleaning Solutions | Luxury Automotive & Industrial Dry Ice Blasting India',
+  description:
+    "India's premier 100% waterless dry ice blasting services & dry ice manufacturing for luxury automotive dealerships (Porsche, Audi, Mercedes, BMW) and industrial plant maintenance. Zero moisture, zero abrasive risk, 70% faster turnaround.",
   keywords: [
     'Dry Ice Blasting Hyderabad',
     'Dry Ice Cleaning Telangana',
@@ -15,19 +17,26 @@ export const metadata = {
     'Luxury Car Waterless Cleaning Porsche Audi Mercedes',
     'Industrial Equipment Dry Ice Maintenance',
     'Dry Ice Pellets Manufacturer India',
-    'Atul Group of Companies'
+    'Atul Group of Companies',
   ],
-  authors: [{ name: 'Ice Cleaning Solutions', url: 'https://icecleaningsolutions.com' }],
+  authors: [
+    {
+      name: 'Ice Cleaning Solutions',
+      url: 'https://www.ice-cleaning-solutions.com',
+    },
+  ],
   creator: 'Ice Cleaning Solutions',
   publisher: 'Ice Cleaning Solutions',
-  metadataBase: new URL('https://icecleaningsolutions.com'),
+  metadataBase: new URL('https://www.ice-cleaning-solutions.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Ice Cleaning Solutions | Precision Dry Ice Blasting for Luxury Dealerships',
-    description: '100% Waterless, non-abrasive dry ice detailing for luxury car dealerships (Porsche, Mercedes, BMW, Audi) and industrial equipment.',
-    url: 'https://icecleaningsolutions.com',
+    title:
+      'Ice Cleaning Solutions | Precision Dry Ice Blasting for Luxury Dealerships',
+    description:
+      '100% Waterless, non-abrasive dry ice detailing for luxury car dealerships (Porsche, Mercedes, BMW, Audi) and industrial equipment.',
+    url: 'https://www.ice-cleaning-solutions.com',
     siteName: 'Ice Cleaning Solutions',
     images: [
       {
@@ -43,7 +52,8 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Ice Cleaning Solutions | Luxury Automotive Dry Ice Blasting',
-    description: 'Zero moisture, non-abrasive dry ice cleaning for luxury dealerships & industrial plants in India.',
+    description:
+      'Zero moisture, non-abrasive dry ice cleaning for luxury dealerships & industrial plants in India.',
     images: ['/images/automotive.png'],
   },
   robots: {
@@ -64,69 +74,88 @@ const jsonLdSchema = {
   '@graph': [
     {
       '@type': 'AutomotiveBusiness',
-      '@id': 'https://icecleaningsolutions.com/#organization',
-      'name': 'Ice Cleaning Solutions',
-      'url': 'https://icecleaningsolutions.com',
-      'logo': 'https://icecleaningsolutions.com/images/automotive.png',
-      'image': 'https://icecleaningsolutions.com/images/automotive.png',
-      'description': 'Enterprise waterless dry ice blasting services & dry ice manufacturing for luxury automotive dealerships and industrial facilities in India.',
-      'telephone': '+91-8349173098',
-      'email': 'sales@icecleaningsolutions.org',
-      'founder': {
+      '@id': 'https://www.ice-cleaning-solutions.com/#organization',
+      name: 'Ice Cleaning Solutions',
+      url: 'https://www.ice-cleaning-solutions.com',
+      logo: 'https://www.ice-cleaning-solutions.com/icon.png',
+      image:
+        'https://www.ice-cleaning-solutions.com/images/automotive.png',
+      description:
+        'Enterprise waterless dry ice blasting services & dry ice manufacturing for luxury automotive dealerships and industrial facilities in India.',
+      telephone: '+91-8349173098',
+      email: 'sales@icecleaningsolutions.org',
+      founder: {
         '@type': 'Person',
-        'name': 'Anushka Agarwal'
+        name: 'Anushka Agarwal',
       },
-      'parentOrganization': {
+      parentOrganization: {
         '@type': 'Organization',
-        'name': 'Atul Group of Companies',
-        'address': {
+        name: 'Atul Group of Companies',
+        address: {
           '@type': 'PostalAddress',
-          'addressLocality': 'Bhilai',
-          'addressRegion': 'Chhattisgarh',
-          'addressCountry': 'IN'
-        }
+          addressLocality: 'Bhilai',
+          addressRegion: 'Chhattisgarh',
+          addressCountry: 'IN',
+        },
       },
-      'address': [
+      address: [
         {
           '@type': 'PostalAddress',
-          'streetAddress': 'SY.130P & 115/1P, Manikonda Jagir, Nanakramguda Road',
-          'addressLocality': 'Hyderabad',
-          'addressRegion': 'Telangana',
-          'postalCode': '500032',
-          'addressCountry': 'IN'
-        }
+          streetAddress:
+            'SY.130P & 115/1P, Manikonda Jagir, Nanakramguda Road',
+          addressLocality: 'Hyderabad',
+          addressRegion: 'Telangana',
+          postalCode: '500032',
+          addressCountry: 'IN',
+        },
       ],
-      'areaServed': ['Hyderabad', 'Telangana', 'India'],
-      'priceRange': '₹₹₹',
-      'openingHoursSpecification': {
+      areaServed: ['Hyderabad', 'Telangana', 'India'],
+      priceRange: '₹₹₹',
+      openingHoursSpecification: {
         '@type': 'OpeningHoursSpecification',
-        'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        'opens': '09:00',
-        'closes': '19:00'
-      }
+        dayOfWeek: [
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+          'Saturday',
+        ],
+        opens: '09:00',
+        closes: '19:00',
+      },
     },
     {
       '@type': 'Service',
-      'name': 'Luxury Automotive Dry Ice Detailing',
-      'provider': { '@id': 'https://icecleaningsolutions.com/#organization' },
-      'serviceType': 'Automotive Cleaning',
-      'description': 'Non-abrasive, 100% moisture-free dry ice blasting for engine bays, undercarriages, delicate electronics, and wheel wells of Porsche, Audi, Mercedes, BMW, and Rolls-Royce vehicles.'
+      name: 'Luxury Automotive Dry Ice Detailing',
+      provider: {
+        '@id': 'https://www.ice-cleaning-solutions.com/#organization',
+      },
+      serviceType: 'Automotive Cleaning',
+      description:
+        'Non-abrasive, 100% moisture-free dry ice blasting for engine bays, undercarriages, delicate electronics, and wheel wells of Porsche, Audi, Mercedes, BMW, and Rolls-Royce vehicles.',
     },
     {
       '@type': 'Service',
-      'name': 'Industrial Equipment Dry Ice Cleaning',
-      'provider': { '@id': 'https://icecleaningsolutions.com/#organization' },
-      'serviceType': 'Industrial Cleaning',
-      'description': 'Zero secondary waste dry ice cleaning for manufacturing equipment, electrical cabinets, and production lines to reduce operational downtime.'
+      name: 'Industrial Equipment Dry Ice Cleaning',
+      provider: {
+        '@id': 'https://www.ice-cleaning-solutions.com/#organization',
+      },
+      serviceType: 'Industrial Cleaning',
+      description:
+        'Zero secondary waste dry ice cleaning for manufacturing equipment, electrical cabinets, and production lines to reduce operational downtime.',
     },
     {
       '@type': 'Service',
-      'name': 'Dry Ice Manufacturing & Bulk Supply',
-      'provider': { '@id': 'https://icecleaningsolutions.com/#organization' },
-      'serviceType': 'Manufacturing',
-      'description': 'Production and distribution of 3mm pellets, 9mm pellets, 16mm pellets, and dry ice blocks for commercial, medical, and cleaning applications.'
-    }
-  ]
+      name: 'Dry Ice Manufacturing & Bulk Supply',
+      provider: {
+        '@id': 'https://www.ice-cleaning-solutions.com/#organization',
+      },
+      serviceType: 'Manufacturing',
+      description:
+        'Production and distribution of 3mm pellets, 9mm pellets, 16mm pellets, and dry ice blocks for commercial, medical, and cleaning applications.',
+    },
+  ],
 };
 
 export default function RootLayout({ children }) {
@@ -139,7 +168,10 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${inter.variable} ${outfit.variable}`}>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-46LZRVLP21" strategy="afterInteractive" />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-46LZRVLP21"
+          strategy="afterInteractive"
+        />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
