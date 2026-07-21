@@ -8,6 +8,7 @@ import ServicesShowcase from '../components/ServicesShowcase';
 import TrustHeritage from '../components/TrustHeritage';
 import Offices from '../components/Offices';
 import Footer from '../components/Footer';
+import FAQ from '../components/FAQ';
 
 export default function HomePage() {
   return (
@@ -36,8 +37,12 @@ export default function HomePage() {
       {/* Office Locations */}
       <Offices />
 
+      {/* Frequently Asked Questions */}
+      <FAQ />
+
       {/* Footer */}
       <Footer />
+      
     </main>
   );
 }
