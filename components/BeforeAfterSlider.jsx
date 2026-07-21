@@ -6,29 +6,48 @@ import { MoveHorizontal, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const transformData = [
   {
-    id: 'engine',
-    label: 'BMW Engine Bay',
+    id: 'bmw-engine',
+    label: 'Engine Bay Cleaning',
     before: '/images/bmw_before.webp',
     after: '/images/bmw_after.webp',
     beforeStyle: { transform: 'scale(0.98)' },
     afterStyle: {},
   },
   {
-    id: 'mg',
-    label: 'MG Undercarriage',
+    id: 'mg-engine',
+    label: 'Engine Bay Cleaning',
     before: '/images/mg_before.webp',
     after: '/images/mg_after.webp',
-    beforeStyle: { transform: 'scale(1.03) translateY(10px)', transformOrigin: 'center' },
+    beforeStyle: {
+      transform: 'scale(1.03) translateY(10px)',
+      transformOrigin: 'center',
+    },
     afterStyle: {},
   },
   {
-    id: 'porsche',
-    label: 'Porsche Details',
+    id: 'porsche-engine',
+    label: 'Engine Bay Cleaning',
     before: '/images/por_before.webp',
     after: '/images/por_after.webp',
     beforeStyle: {},
     afterStyle: {},
-  }
+  },
+  {
+    id: 'alloy-wheels',
+    label: 'Alloy Wheels Cleaning',
+    before: '/images/IMG-20260721-WA0026.jpg',
+    after: '/images/IMG-20260721-WA0025.jpg',
+    beforeStyle: {},
+    afterStyle: {},
+  },
+  {
+    id: 'industrial-equipment',
+    label: 'Industrial Equipment Cleaning',
+    before: '/images/IMG-20260721-WA0009.jpg',
+    after: '/images/IMG-20260721-WA0024.jpg',
+    beforeStyle: {},
+    afterStyle: {},
+  },
 ];
 
 function SingleSlider({ data }) {
@@ -39,16 +58,18 @@ function SingleSlider({ data }) {
   const handleMove = useCallback(
     (clientX) => {
       if (!isDragging || !containerRef.current) return;
+
       const rect = containerRef.current.getBoundingClientRect();
       const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
       const percentage = (x / rect.width) * 100;
+
       setSliderPos(percentage);
     },
     [isDragging]
   );
 
-  const onMouseMove = (e) => handleMove(e.clientX);
-  const onTouchMove = (e) => handleMove(e.touches[0].clientX);
+  const onMouseMove = (event) => handleMove(event.clientX);
+  const onTouchMove = (event) => handleMove(event.touches[0].clientX);
   const stopDragging = () => setIsDragging(false);
 
   return (
@@ -59,7 +80,7 @@ function SingleSlider({ data }) {
         scrollSnapAlign: 'center',
         display: 'flex',
         flexDirection: 'column',
-        gap: '24px',
+        gap: '20px',
       }}
     >
       <div
@@ -86,16 +107,27 @@ function SingleSlider({ data }) {
           backgroundColor: '#0F2044',
         }}
       >
-        {/* AFTER Image (Base Layer) */}
-        <div style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+          }}
+        >
           <Image
             src={`${data.after}?v=11`}
             alt={`${data.label} After`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            style={{ objectFit: 'cover', display: 'block', ...(data.afterStyle || {}) }}
+            style={{
+              objectFit: 'cover',
+              display: 'block',
+              ...(data.afterStyle || {}),
+            }}
             draggable={false}
           />
+
           <div
             style={{
               position: 'absolute',
@@ -116,7 +148,6 @@ function SingleSlider({ data }) {
           </div>
         </div>
 
-        {/* BEFORE Image (Overlay Layer) */}
         <div
           style={{
             position: 'absolute',
@@ -130,9 +161,14 @@ function SingleSlider({ data }) {
             alt={`${data.label} Before`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            style={{ objectFit: 'cover', display: 'block', ...(data.beforeStyle || {}) }}
+            style={{
+              objectFit: 'cover',
+              display: 'block',
+              ...(data.beforeStyle || {}),
+            }}
             draggable={false}
           />
+
           <div
             style={{
               position: 'absolute',
@@ -153,7 +189,6 @@ function SingleSlider({ data }) {
           </div>
         </div>
 
-        {/* Tint Overlay (Safe for Safari) */}
         <div
           style={{
             position: 'absolute',
@@ -164,7 +199,6 @@ function SingleSlider({ data }) {
           }}
         />
 
-        {/* Divider Line */}
         <div
           style={{
             position: 'absolute',
@@ -178,7 +212,6 @@ function SingleSlider({ data }) {
             transform: 'translateX(-50%)',
           }}
         >
-          {/* Handle */}
           <div
             style={{
               position: 'absolute',
@@ -201,7 +234,20 @@ function SingleSlider({ data }) {
         </div>
       </div>
 
-      {/* Accessibility Range Input */}
+      <div style={{ textAlign: 'center' }}>
+        <span
+          style={{
+            display: 'inline-block',
+            fontFamily: 'var(--font-outfit)',
+            fontSize: '18px',
+            fontWeight: 700,
+            color: '#0F2044',
+          }}
+        >
+          {data.label}
+        </span>
+      </div>
+
       <div
         style={{
           display: 'flex',
@@ -210,17 +256,39 @@ function SingleSlider({ data }) {
           gap: '16px',
         }}
       >
-        <span style={{ fontSize: '14px', color: '#475569', fontWeight: 600 }}>Before</span>
+        <span
+          style={{
+            fontSize: '14px',
+            color: '#475569',
+            fontWeight: 600,
+          }}
+        >
+          Before
+        </span>
+
         <input
           type="range"
           min="0"
           max="100"
           value={sliderPos}
-          onChange={(e) => setSliderPos(Number(e.target.value))}
-          style={{ flex: 1, cursor: 'pointer', accentColor: '#0066CC' }}
-          aria-label="Image comparison slider"
+          onChange={(event) => setSliderPos(Number(event.target.value))}
+          style={{
+            flex: 1,
+            cursor: 'pointer',
+            accentColor: '#0066CC',
+          }}
+          aria-label={`${data.label} image comparison slider`}
         />
-        <span style={{ fontSize: '14px', color: '#475569', fontWeight: 600 }}>After</span>
+
+        <span
+          style={{
+            fontSize: '14px',
+            color: '#475569',
+            fontWeight: 600,
+          }}
+        >
+          After
+        </span>
       </div>
     </div>
   );
@@ -231,142 +299,5 @@ export default function BeforeAfterSlider() {
 
   const scrollLeft = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -scrollRef.current.offsetWidth, behavior: 'smooth' });
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: scrollRef.current.offsetWidth, behavior: 'smooth' });
-    }
-  };
-
-  return (
-    <section
-      id="results"
-      style={{
-        padding: '100px 0',
-        backgroundColor: '#F8FAFC',
-        borderTop: '1px solid #E2E8F0',
-      }}
-    >
-      <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-        
-        {/* Header Badge */}
-        <div style={{ textAlign: 'center', marginBottom: '24px' }}>
-          <span
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              fontSize: '12px',
-              fontWeight: 800,
-              color: '#0066CC',
-              backgroundColor: '#F0F4FF',
-              padding: '8px 20px',
-              borderRadius: '999px',
-              border: '1px solid #DBEAFE',
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-            }}
-          >
-            WHAT YOU CAN EXPECT
-          </span>
-        </div>
-
-        {/* Scroll Instructions */}
-        <div style={{ textAlign: 'center', marginBottom: '40px' }} className="mobile-swipe-text">
-           <p style={{ margin: 0, fontSize: '14px', color: '#64748B', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-             <MoveHorizontal size={16} /> Swipe to see more examples
-           </p>
-        </div>
-
-        {/* Horizontal Scrolling Slider Container with Arrows */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '20px', maxWidth: '1050px', margin: '0 auto' }}>
-          
-          <button 
-            className="desktop-arrow"
-            onClick={scrollLeft}
-            aria-label="Scroll left"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '48px',
-              height: '48px',
-              borderRadius: '50%',
-              backgroundColor: '#FFFFFF',
-              border: '1px solid #E2E8F0',
-              cursor: 'pointer',
-              boxShadow: '0 4px 12px rgba(15,32,68,0.06)',
-              flexShrink: 0,
-              transition: 'all 0.2s',
-            }}
-            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#F8FAFC'; e.currentTarget.style.borderColor = '#CBD5E1'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#FFFFFF'; e.currentTarget.style.borderColor = '#E2E8F0'; }}
-          >
-            <ChevronLeft color="#0F2044" size={24} />
-          </button>
-
-          <div 
-            ref={scrollRef}
-            style={{ 
-              display: 'flex', 
-              flex: 1,
-              gap: '24px', 
-              overflowX: 'auto', 
-              scrollSnapType: 'x mandatory',
-              paddingBottom: '24px',
-              WebkitOverflowScrolling: 'touch',
-            }}
-            className="hide-scrollbar"
-          >
-            {transformData.map((data) => (
-              <SingleSlider key={data.id} data={data} />
-            ))}
-          </div>
-
-          <button 
-            className="desktop-arrow"
-            onClick={scrollRight}
-            aria-label="Scroll right"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '48px',
-              height: '48px',
-              borderRadius: '50%',
-              backgroundColor: '#FFFFFF',
-              border: '1px solid #E2E8F0',
-              cursor: 'pointer',
-              boxShadow: '0 4px 12px rgba(15,32,68,0.06)',
-              flexShrink: 0,
-              transition: 'all 0.2s',
-            }}
-            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#F8FAFC'; e.currentTarget.style.borderColor = '#CBD5E1'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#FFFFFF'; e.currentTarget.style.borderColor = '#E2E8F0'; }}
-          >
-            <ChevronRight color="#0F2044" size={24} />
-          </button>
-        </div>
-      </div>
-      
-      <style>{`
-        .hide-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        .hide-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        @media (max-width: 767px) {
-          .desktop-arrow { display: none !important; }
-        }
-        @media (min-width: 768px) {
-          .mobile-swipe-text { display: none !important; }
-        }
-      `}</style>
-    </section>
-  );
-}
+      scrollRef.current.scrollBy({
+        left:
