@@ -5,29 +5,37 @@ import { ChevronDown } from 'lucide-react';
 
 const faqs = [
   {
-    question: 'What is dry ice blasting?',
+    question: 'What is Dry Ice Blasting, and how does it work?',
     answer:
-      'Dry ice blasting is a non-abrasive cleaning process that propels recycled CO₂ pellets at high speed. The pellets sublimate on contact, lifting away contaminants without leaving secondary media or water behind.',
+      'Dry Ice Blasting is an advanced cleaning technology that uses compressed air to propel dry ice pellets at high speed. On impact, the pellets lift contaminants through thermal shock and instantly sublimate into gas, removing grease, oil, carbon deposits, and dirt without water, chemicals, or abrasive media.',
   },
   {
-    question: 'What surfaces can be cleaned with dry ice blasting?',
+    question:
+      'Is Dry Ice Blasting safe for vehicle engines and electrical components?',
     answer:
-      'It is highly effective on automotive components, production equipment, electrical cabinets, moulds, engines, conveyors, and other delicate industrial surfaces. We assess every application to select the safest operating pressure and pellet size.',
+      'Yes. Dry Ice Blasting is a dry, non-conductive, and non-abrasive cleaning process, making it ideal for engine bays, electrical components, wiring harnesses, and other sensitive automotive parts when performed by trained professionals.',
   },
   {
-    question: 'Is dry ice blasting safe for sensitive equipment?',
+    question: 'What automotive applications is Dry Ice Blasting used for?',
     answer:
-      'Yes. Because the process is dry, non-conductive, and non-abrasive when correctly calibrated, it is ideal for cleaning sensitive machinery and electrical systems with minimal disassembly and downtime.',
+      'Dry Ice Blasting is widely used for engine bay detailing, alloy wheel cleaning, underbody cleaning, classic car restoration, EV battery compartments, transmission housings, suspension components, and the removal of oil, grease, carbon deposits, road grime, and adhesive residues.',
   },
   {
-    question: 'Does dry ice blasting create waste or residue?',
+    question: 'Can Dry Ice Blasting also be used for industrial cleaning?',
     answer:
-      'The dry ice converts directly to gas on impact, so there is no blasting media to collect. Only the removed contaminant remains, making clean-up faster and reducing the need for water or chemical solvents.',
+      'Absolutely. The same technology is extensively used across manufacturing plants, food processing facilities, pharmaceutical units, printing presses, electrical equipment, molds, production machinery, and industrial maintenance where fast, residue-free cleaning with minimal downtime is essential.',
   },
   {
-    question: 'Can dry ice blasting be performed on-site?',
+    question:
+      'Does Dry Ice Blasting leave any residue or require post-cleaning cleanup?',
     answer:
-      'Absolutely. Our mobile teams provide on-site dry ice cleaning for facilities, fleets, workshops, and production lines, helping you restore equipment while keeping operational disruption to a minimum.',
+      'No. Dry ice pellets instantly sublimate from a solid into carbon dioxide gas upon impact, leaving no blasting media behind. The only remaining material is the contaminant that has been removed, making cleanup quick and minimizing operational downtime.',
+  },
+  {
+    question:
+      'What are the advantages of Dry Ice Blasting over conventional cleaning methods?',
+    answer:
+      'Unlike pressure washing or chemical cleaning, Dry Ice Blasting is water-free, non-abrasive, and leaves no secondary blasting media behind. It helps reduce equipment downtime, protects delicate surfaces, eliminates the need for harsh chemicals, and provides a faster, cleaner, and more environmentally responsible solution.',
   },
 ];
 
