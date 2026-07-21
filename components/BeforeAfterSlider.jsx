@@ -39,7 +39,7 @@ const transformData = [
     id: 'alloy-wheels',
     category: 'alloy-wheels',
     label: 'Alloy Wheels Cleaning',
-    before: '/images/IMG-20260721-WA0026.jpg',
+    before: '/images/IMG_20260721_165225.png',
     after: '/images/IMG-20260721-WA0025.jpg',
     aspectRatio: 1,
   },
